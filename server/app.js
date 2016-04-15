@@ -1,6 +1,6 @@
 // var serialport = require('serialport');
 // var SerialPort = serialport.SerialPort;
-var port    = process.env.PORT || 80;
+var port    = process.env.PORT || 8080;
 var path    = require('path');
 var express = require('express');
 var app = express();
@@ -44,7 +44,8 @@ app.engine('html', require('ejs').renderFile);
 //    console.log('Serial port error: ' + error);
 // }
 
-// console.log("server running on port "+port);
+app.listen(port);
+console.log("server running on port "+port);
 
 app.get('/', function(req, res){
 	res.render('index.html');
