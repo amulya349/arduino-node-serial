@@ -44,7 +44,7 @@ app.engine('html', require('ejs').renderFile);
 //    console.log('Serial port error: ' + error);
 // }
 
-app.listen(port);
+// app.listen(port);
 console.log("server running on port "+port);
 
 app.get('/', function(req, res){
@@ -55,7 +55,7 @@ app.get('/', function(req, res){
 app.get('/value/:val', function(req, res) {
    console.log(req.params.val);
    io.emit('value', req.params.val);
-   res.send(200);
+   res.sendStatus(200);
 })
 
 io.on('connection', function(socket){
