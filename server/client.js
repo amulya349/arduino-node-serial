@@ -39,5 +39,3 @@ function showPortClose() {
 function showError(error) {
    console.log('Serial port error: ' + error);
 }
-
-console.log("server running on port "+port);
